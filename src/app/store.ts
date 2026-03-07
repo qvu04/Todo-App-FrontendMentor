@@ -5,5 +5,9 @@ export const store = configureStore({
         todo: todoReducer
     }
 });
+store.subscribe(() => {
+    const state = store.getState();
+    localStorage.setItem("todo_list", JSON.stringify(state.todo.todoItems));
+})
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

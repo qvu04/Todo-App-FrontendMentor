@@ -5,5 +5,5 @@ export interface ITodoItem {
 }
 export interface ITodoState {
     todoItems: ITodoItem[],
-    filter: "all" | "active" | "completed"
+    status: "all" | "active" | "completed"
 }
