@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+📝 Modern Todo App - Frontend Mentor Challenge
+A professional, responsive, and highly functional Todo application built with React, Redux Toolkit, and Tailwind CSS v4. This project focuses on state management, data persistence, and seamless user experience.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Features
+Full CRUD Operations: Create, Read, Toggle, and Delete todos effortlessly.
 
-Currently, two official plugins are available:
+State Management: Powered by Redux Toolkit for predictable and centralized data flow.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Advanced Filtering: Switch between All, Active, and Completed views without losing data.
 
-## React Compiler
+Dark Mode Support: Seamless theme switching using React Context API and Tailwind CSS v4 (CSS variables & custom variants).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Data Persistence: Your tasks and theme preferences are saved locally using a custom useLocalStorage hook and Redux store.subscribe.
 
-## Expanding the ESLint configuration
+Responsive Design: Mobile-first approach ensuring a great look on all screen sizes.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🛠️ Tech Stack
+Framework: React (Vite)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Language: TypeScript
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+State Management: Redux Toolkit (RTK)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Styling: Tailwind CSS v4
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Persistence: Browser LocalStorage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Context API: For Global Theme Management
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🏗️ Architecture Highlights
+1. Persistent State
+I implemented a robust persistence layer by subscribing to the Redux store. Every change is automatically synced to localStorage, ensuring the user's data survives page refreshes.
+
+2. Tailwind v4 Dark Mode
+Utilizing the latest Tailwind CSS v4 features, I used @theme variables and @custom-variant to handle dark mode styling through a single .dark class on the root element.
+
+3. Custom Hooks
+Created a reusable useLocalStorage hook to encapsulate the logic for reading and writing to the browser's storage, keeping the components clean and DRY.
+
+🏁 Getting Started
+Clone the repository:
+
+Bash
+git clone https://github.com/qvu04/Todo-App-FrontendMentor.git
+Install dependencies:
+
+Bash
+npm install
+Run the development server:
+
+Bash
+npm run dev
+📜 License
+This project is open-source and available under the MIT License.
